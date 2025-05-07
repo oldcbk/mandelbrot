@@ -69,7 +69,9 @@ function startWorkers() {
 }
 
 function processWork(workerResult, worker) {
-    drawRow(workerResult);
+    if (workerResult.generation === generation) {
+        drawRow(workerResult);
+    }
     reassignWorker(worker);
 }
 
